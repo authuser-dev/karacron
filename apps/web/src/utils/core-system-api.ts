@@ -66,10 +66,7 @@ export async function getCoreSystemDisks(): Promise<CoreSystemDisk[]> {
 	}
 
 	return payload.disks
-		.filter(
-			(item): item is Partial<CoreSystemDisk> & { id: string } =>
-				typeof item.id === 'string',
-		)
+		.filter((item) => typeof item.id === 'string')
 		.map((item) => ({
 			id: item.id,
 			label: typeof item.label === 'string' ? item.label : 'Disk',

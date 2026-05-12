@@ -2,7 +2,7 @@
 
 import { Button } from '@base/buttons/button';
 import { InputDateBase } from '@base/input/input-date';
-import { useBreakpoint } from '@hookuse-breakpoint';
+import { useBreakpoint } from '@hook/use-breakpoint';
 import type { CalendarDate } from '@internationalized/date';
 import { ChevronLeft, ChevronRight } from '@untitledui/icons';
 import { cx } from '@util/cx';

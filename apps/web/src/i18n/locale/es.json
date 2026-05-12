@@ -194,7 +194,8 @@
       "privacyLabel": "Acepto la politica de privacidad.",
       "dataProcessingLabel": "Acepto el tratamiento de datos necesario para prestar el servicio.",
       "acceptAllLabel": "He leido y acepto los terminos, condiciones y el uso de datos.",
-      "error": "Debes aceptar terminos, privacidad y tratamiento de datos para continuar."
+      "error": "Debes aceptar terminos, privacidad y tratamiento de datos para continuar.",
+      "acceptTermsLabel": "Acepto los terminos"
     },
     "user": {
       "title": "Configuracion del usuario",
@@ -271,6 +272,8 @@
         "defaultModelId": "Selecciona un modelo por defecto.",
         "activePersonalityId": "Selecciona una personalidad activa."
       },
+      "voiceLabel": "Voz",
+      "voicePlaceholder": "Selecciona voz",
       "specializationGroupLabels": {
         "general": "General",
         "engineering": "Ingeniería",

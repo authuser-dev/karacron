@@ -16,6 +16,8 @@ export type SelectItemType = {
     supportingText?: string;
     /** Leading icon component or element. */
     icon?: FC | ReactNode;
+    /** Whether this item acts as a group label (non-selectable). */
+    isGroupLabel?: boolean;
 };
 
 export interface CommonProps {
