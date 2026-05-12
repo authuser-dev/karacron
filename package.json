@@ -26,7 +26,7 @@
 	"bugs": {
 		"url": "https://github.com/authuser-dev/karacron/issues"
 	},
-	"homepage": "https://github.com/authuser-dev/karacron#readme",
+	"homepage": "https://karacron.com",
 	"packageManager": "npm@10.9.2",
 	"private": true,
 	"workspaces": [
