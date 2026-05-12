@@ -1,6 +1,8 @@
 ﻿package application
 
 import (
+	"encoding/json"
+
 	"github.com/authuser-dev/karacron/apps/core/src/http/user/domain"
 	dbmod "github.com/authuser-dev/karacron/apps/core/src/module/database"
 	"github.com/authuser-dev/karacron/apps/core/src/server/middleware"
@@ -97,6 +99,14 @@ func (u *UserPatchUseCase) UserPatch(c fiber.Ctx) error {
 			v = 1
 		}
 		fields["onboarding_complete"] = v
+	}
+	if req.Preferences != nil {
+		payload, err := json.Marshal(req.Preferences)
+		if err != nil {
+			u.Log.Error("marshal preferences", zap.Error(err))
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Preferences inv\u00e1lidas", "status": 400})
+		}
+		fields["preferences"] = string(payload)
 	}
 
 	for col, val := range fields {

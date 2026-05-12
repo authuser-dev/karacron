@@ -1,6 +1,8 @@
 ﻿package application
 
 import (
+	"encoding/json"
+
 	"github.com/authuser-dev/karacron/apps/core/src/http/user/domain"
 	dbmod "github.com/authuser-dev/karacron/apps/core/src/module/database"
 	"github.com/authuser-dev/karacron/apps/core/src/server/middleware"
@@ -77,15 +79,26 @@ func (u *UserPostUseCase) UserPost(c fiber.Ctx) error {
 		onboarding = 1
 	}
 
+	var preferencesJSON *string
+	if req.Preferences != nil {
+		payload, err := json.Marshal(req.Preferences)
+		if err != nil {
+			u.Log.Error("marshal preferences", zap.Error(err))
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Preferences inv\u00e1lidas", "status": 400})
+		}
+		value := string(payload)
+		preferencesJSON = &value
+	}
+
 	// 6. Persistir el nuevo registro en la tabla user_settings.
 	id := dbmod.GenID()
 	_, err = u.DB.Exec(
 		`INSERT INTO user_settings
-			(id, installation_id, first_name, last_name, display_name, avatar_url, email, birth_date, bio, language, timezone, date_format, time_format, onboarding_complete)
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+			(id, installation_id, first_name, last_name, display_name, avatar_url, email, birth_date, bio, language, timezone, date_format, time_format, onboarding_complete, preferences)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		id, installID, firstName, req.LastName, req.DisplayName, req.AvatarURL,
 		req.Email, req.BirthDate, bio, lang, tz,
-		req.DateFormat, req.TimeFormat, onboarding,
+		req.DateFormat, req.TimeFormat, onboarding, preferencesJSON,
 	)
 	if err != nil {
 		u.Log.Error("insert user_settings", zap.Error(err))
