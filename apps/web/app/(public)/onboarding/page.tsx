@@ -1,16 +1,16 @@
-﻿'use client';
+﻿"use client";
 
-import { Button } from '@/src/components/base/buttons/button';
-import { LanguageSwitcher } from '@/src/components/language-switcher';
-import { Logo } from '@/src/components/logo';
-import { ThemeToggle } from '@/src/components/theme-toggle';
+import { Button } from "@/src/components/base/buttons/button";
+import { LanguageSwitcher } from "@/src/components/language-switcher";
+import { Logo } from "@/src/components/logo";
+import { ThemeToggle } from "@/src/components/theme-toggle";
 import {
 	AssistantStep,
 	LegalStep,
 	PermissionsStep,
 	UserStep,
-} from '@/src/components/wizards/onboarding';
-import { useI18n } from '@/src/providers/locale-provider';
+} from "@/src/components/wizards/onboarding";
+import { useI18n } from "@/src/providers/locale-provider";
 import {
 	useWizard,
 	WizardFinishModal,
@@ -18,19 +18,19 @@ import {
 	WizardProvider,
 	WizardStepList,
 	type WizardStepDef,
-} from '@foundation/wizard';
-import { updateCoreAssistantConfig } from '@util/core-assistant-api';
+} from "@foundation/wizard";
+import { updateCoreAssistantConfig } from "@util/core-assistant-api";
 import {
 	createCoreUser,
 	getCoreUserStatus,
 	updateCurrentCoreUser,
-} from '@util/core-user-api';
-import { Bot, Sparkles } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import type { DateValue } from 'react-aria-components';
+} from "@util/core-user-api";
+import { Bot, Sparkles } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import type { DateValue } from "react-aria-components";
 
-const STEP_IDS = ['legal', 'user', 'assistant', 'permissions'] as const;
+const STEP_IDS = ["legal", "user", "assistant", "permissions"] as const;
 
 function OnboardingContent() {
 	const { currentStep, isFirst, isLast, canAdvance, goNext, goBack } =
@@ -40,22 +40,23 @@ function OnboardingContent() {
 	const t = messages.onboardingScreen;
 	const tw = messages.onboardingWizard;
 	const [legalAccepted, setLegalAccepted] = useState(false);
+	const [analyticsConsent, setAnalyticsConsent] = useState(false);
 	const [isSaving, setIsSaving] = useState(false);
 	const [finishError, setFinishError] = useState<string | null>(null);
 	const [isFinishModalOpen, setIsFinishModalOpen] = useState(false);
 
 	// User step state
-	const [name, setName] = useState('');
-	const [lastName, setLastName] = useState('');
-	const [email, setEmail] = useState('');
+	const [name, setName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
 	const [birthdate, setBirthdate] = useState<DateValue | null>(null);
-	const [bio, setBio] = useState('');
+	const [bio, setBio] = useState("");
 
 	// Assistant step state
-	const [assistantName, setAssistantName] = useState('Kara');
-	const [behaviorTypeId, setBehaviorTypeId] = useState('');
-	const [toneId, setToneId] = useState('');
-	const [preferredName, setPreferredName] = useState('');
+	const [assistantName, setAssistantName] = useState("Kara");
+	const [behaviorTypeId, setBehaviorTypeId] = useState("");
+	const [toneId, setToneId] = useState("");
+	const [preferredName, setPreferredName] = useState("");
 
 	// Permissions step state
 	const [permissionsEnabled, setPermissionsEnabled] = useState<
@@ -74,6 +75,7 @@ function OnboardingContent() {
 			onboardingCompleted: true,
 			preferences: {
 				preferredName: preferredName.trim() || null,
+				analyticsConsent,
 				permissionsEnabled,
 				selectedDisks,
 			},
@@ -120,7 +122,7 @@ function OnboardingContent() {
 			setIsFinishModalOpen(true);
 		} catch {
 			setFinishError(
-				'No pudimos guardar tu configuración. Reintenta en unos segundos.',
+				"No pudimos guardar tu configuración. Reintenta en unos segundos.",
 			);
 		} finally {
 			setIsSaving(false);
@@ -165,6 +167,8 @@ function OnboardingContent() {
 						<LegalStep
 							accepted={legalAccepted}
 							onAcceptedChange={setLegalAccepted}
+							analyticsConsent={analyticsConsent}
+							onAnalyticsConsentChange={setAnalyticsConsent}
 						/>
 					</WizardPanel>
 					<WizardPanel stepId="user">
@@ -227,7 +231,7 @@ function OnboardingContent() {
 						>
 							{isLast
 								? isSaving
-									? 'Guardando...'
+									? "Guardando..."
 									: tw.finishLabel
 								: tw.nextLabel}
 						</Button>
@@ -237,8 +241,8 @@ function OnboardingContent() {
 
 			<WizardFinishModal
 				isOpen={isFinishModalOpen}
-				title={`Boom, ${assistantName.trim() || 'Kara'} ya está en línea`}
-				description={`Todo quedó guardado en la base de datos. ${assistantName.trim() || 'Kara'} se está despertando con toda tu vibra. Prepárate para el dashboard.`}
+				title={`Boom, ${assistantName.trim() || "Kara"} ya está en línea`}
+				description={`Todo quedó guardado en la base de datos. ${assistantName.trim() || "Kara"} se está despertando con toda tu vibra. Prepárate para el dashboard.`}
 				countdownSeconds={4}
 				countdownLabel={(seconds) =>
 					`Entramos al dashboard en ${seconds}s...`
@@ -246,7 +250,7 @@ function OnboardingContent() {
 				dismissLabel="Entrar ahora"
 				onComplete={() => {
 					setIsFinishModalOpen(false);
-					router.replace('/dashboard');
+					router.replace("/dashboard");
 				}}
 				icon={
 					<div className="relative">

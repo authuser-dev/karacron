@@ -14,6 +14,7 @@ export type CoreCreateUserInput = {
 	locale?: string;
 	timezone?: string;
 	onboardingCompleted?: boolean;
+	preferences?: Record<string, unknown>;
 };
 
 export type CoreUpdateUserInput = Partial<CoreCreateUserInput>;
@@ -30,8 +31,8 @@ export type CoreCurrentUser = {
 
 function getCoreBaseUrl(): string {
 	return (
-		process.env.NEXT_PUBLIC_CORE_URL ?? 'http://localhost:3001'
-	).replace(/\/$/, '');
+		process.env.NEXT_PUBLIC_CORE_URL ?? "http://localhost:3001"
+	).replace(/\/$/, "");
 }
 
 async function fetchWithTimeout(
@@ -58,11 +59,11 @@ async function parseJson<T>(response: Response): Promise<T> {
 
 export async function getCoreUserStatus(): Promise<CoreUserStatus> {
 	const response = await fetchWithTimeout(`${getCoreBaseUrl()}/user/status`, {
-		method: 'GET',
+		method: "GET",
 		headers: {
-			'content-type': 'application/json',
+			"content-type": "application/json",
 		},
-		cache: 'no-store',
+		cache: "no-store",
 	});
 
 	if (!response.ok) {
@@ -76,7 +77,7 @@ export async function getCoreUserStatus(): Promise<CoreUserStatus> {
 	return {
 		userExists: payload.userExists === true,
 		onboardingCompleted: payload.onboardingCompleted === true,
-		userId: typeof payload.userId === 'string' ? payload.userId : null,
+		userId: typeof payload.userId === "string" ? payload.userId : null,
 		requiresOtp: payload.requiresOtp === true,
 	};
 }
@@ -85,9 +86,9 @@ export async function createCoreUser(
 	input: CoreCreateUserInput,
 ): Promise<void> {
 	const response = await fetchWithTimeout(`${getCoreBaseUrl()}/user`, {
-		method: 'POST',
+		method: "POST",
 		headers: {
-			'content-type': 'application/json',
+			"content-type": "application/json",
 		},
 		body: JSON.stringify(input),
 	});
@@ -103,11 +104,11 @@ export async function createCoreUser(
 
 export async function getCurrentCoreUser(): Promise<CoreCurrentUser> {
 	const response = await fetchWithTimeout(`${getCoreBaseUrl()}/user/me`, {
-		method: 'GET',
+		method: "GET",
 		headers: {
-			'content-type': 'application/json',
+			"content-type": "application/json",
 		},
-		cache: 'no-store',
+		cache: "no-store",
 	});
 
 	if (!response.ok) {
@@ -123,9 +124,9 @@ export async function updateCurrentCoreUser(
 	input: CoreUpdateUserInput,
 ): Promise<void> {
 	const response = await fetchWithTimeout(`${getCoreBaseUrl()}/user/me`, {
-		method: 'PATCH',
+		method: "PATCH",
 		headers: {
-			'content-type': 'application/json',
+			"content-type": "application/json",
 		},
 		body: JSON.stringify(input),
 	});
@@ -139,7 +140,7 @@ export async function updateCurrentCoreUser(
 
 export type EmailValidationResult = {
 	valid: boolean;
-	reason?: 'invalid_format' | 'no_mx_record' | 'dns_error';
+	reason?: "invalid_format" | "no_mx_record" | "dns_error";
 };
 
 export async function validateCoreEmail(
@@ -148,11 +149,11 @@ export async function validateCoreEmail(
 	const params = new URLSearchParams({ email });
 	const response = await fetchWithTimeout(
 		`${getCoreBaseUrl()}/user/validate-email?${params.toString()}`,
-		{ method: 'GET', headers: { 'content-type': 'application/json' } },
+		{ method: "GET", headers: { "content-type": "application/json" } },
 	);
 
 	if (!response.ok) {
-		return { valid: false, reason: 'dns_error' };
+		return { valid: false, reason: "dns_error" };
 	}
 
 	return parseJson<EmailValidationResult>(response);
