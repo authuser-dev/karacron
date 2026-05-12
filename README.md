@@ -1,5 +1,7 @@
 # Kara - Local-First AI Assistant 🚀
 
+![Kara Banner](docs/banner.png)
+
 > **Privacy without compromise.** A flexible AI assistant that puts you in control. Process data locally by default, connect from anywhere.
 
 [![GitHub license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
