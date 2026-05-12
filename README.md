@@ -94,18 +94,6 @@ Built for:
 
 ---
 
-## 📖 Documentation
-
-| Document                                   | Purpose                                     |
-| ------------------------------------------ | ------------------------------------------- |
-| [User Guide](docs/USER_GUIDE.md)           | How to use the desktop application          |
-| [Messaging Integration](docs/MESSAGING.md) | Connect Telegram, Discord, Slack, etc.      |
-| [Voice Setup](docs/VOICE_SETUP.md)         | Configure speech-to-text and text-to-speech |
-| [Security](docs/SECURITY.md)               | Privacy architecture and data protection    |
-| [Troubleshooting](docs/TROUBLESHOOTING.md) | Common issues and solutions                 |
-
----
-
 ## 💼 Use Cases
 
 ### 🏢 For Enterprises
