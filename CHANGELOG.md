@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/authuser-dev/karacron/compare/v1.0.1...v1.0.2) (2026-05-12)
+
+
+### Bug Fixes
+
+* **desktop:** pin electron version for windows packaging ([76207d6](https://github.com/authuser-dev/karacron/commit/76207d6201c02c7c6e142bdc334550ae5d05c48b))
+
 ## [1.0.1](https://github.com/authuser-dev/karacron/compare/v1.0.0...v1.0.1) (2026-05-12)
 
 
