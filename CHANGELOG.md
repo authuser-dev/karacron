@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/authuser-dev/karacron/compare/v1.0.0...v1.0.1) (2026-05-12)
+
+
+### Bug Fixes
+
+* **desktop:** move electron to devDependencies ([cb41578](https://github.com/authuser-dev/karacron/commit/cb415786a2814ea7d62aaadafa7f832eeee9f473))
+
 # 1.0.0 (2026-05-12)
 
 
