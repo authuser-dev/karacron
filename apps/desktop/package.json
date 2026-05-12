@@ -1,62 +1,25 @@
 {
-	"name": "desktop",
+	"name": "@kara/desktop",
 	"version": "0.1.0",
 	"private": true,
-	"main": "main.js",
+	"main": "dist/main/index.js",
 	"scripts": {
-		"dev": "electron .",
-		"build": "node scripts/prepare-bundle.mjs",
-		"package": "npm run build && electron-builder --publish never",
-		"package:mac": "npm run build && electron-builder --mac dmg zip --publish never",
-		"package:win": "npm run build && electron-builder --win nsis --publish never",
-		"package:linux": "npm run build && electron-builder --linux AppImage --publish never",
-		"lint": "echo 'No lint configured for desktop yet'",
-		"check": "echo 'No checks configured for desktop yet'",
-		"clean": "node -e \"const fs=require('node:fs');['dist','release','web-dist','core-bin'].forEach((p)=>fs.rmSync(p,{recursive:true,force:true}));\""
+		"dev": "node ../../node_modules/wait-on/bin/wait-on tcp:3000 tcp:3001 && electron-vite dev",
+		"build": "electron-vite build",
+		"dist": "pnpm -w run release:verify && pnpm run build && electron-builder",
+		"dist:ci": "pnpm run build && electron-builder",
+		"dist:local": "node scripts/setup-local-build.mjs && pnpm run dist",
+		"typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+		"check": "npm run typecheck"
+	},
+	"dependencies": {
+		"electron": "^35.7.5"
 	},
 	"devDependencies": {
-		"electron": "^32.2.1",
-		"electron-builder": "^24.13.3"
-	},
-	"build": {
-		"appId": "com.kara.desktop",
-		"productName": "Kara",
-		"directories": {
-			"output": "release"
-		},
-		"files": [
-			"main.js",
-			"preload.js",
-			"renderer/**/*",
-			"web-dist/**/*",
-			"package.json"
-		],
-		"extraResources": [
-			{
-				"from": "core-bin",
-				"to": "core-bin",
-				"filter": [
-					"**/*"
-				]
-			}
-		],
-		"mac": {
-			"target": [
-				"dmg",
-				"zip"
-			],
-			"category": "public.app-category.productivity"
-		},
-		"win": {
-			"target": [
-				"nsis"
-			]
-		},
-		"linux": {
-			"target": [
-				"AppImage"
-			],
-			"category": "Utility"
-		}
+		"@types/node": "^24.0.0",
+		"electron-builder": "^25.1.8",
+		"electron-vite": "^3.1.0",
+		"typescript": "^5.9.3",
+		"wait-on": "^8.0.3"
 	}
 }

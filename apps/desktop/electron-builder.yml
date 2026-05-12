@@ -1,0 +1,22 @@
+appId: com.kara.desktop
+productName: Kara Desktop
+
+directories:
+    output: ../../builds
+
+files:
+    - dist/**
+    - package.json
+
+extraResources:
+    - from: ../web/dist
+      to: web
+
+win:
+    target:
+        - portable
+        - nsis
+
+nsis:
+    oneClick: false
+    allowToChangeInstallationDirectory: true
