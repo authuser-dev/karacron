@@ -1,8 +1,5 @@
 import { app, BrowserWindow, Menu } from 'electron';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
 	const window = new BrowserWindow({
