@@ -1,6 +1,8 @@
 {
 	"name": "@kara/desktop",
 	"version": "0.1.0",
+	"description": "Desktop application for Karacron.",
+	"author": "AuthUser Dev",
 	"private": true,
 	"main": "dist/main/index.js",
 	"scripts": {
@@ -15,11 +17,10 @@
 		"typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
 		"check": "npm run typecheck"
 	},
-	"dependencies": {
-		"electron": "^35.7.5"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@types/node": "^24.0.0",
+		"electron": "^35.7.5",
 		"electron-builder": "^25.1.8",
 		"electron-vite": "^3.1.0",
 		"typescript": "^5.9.3",
