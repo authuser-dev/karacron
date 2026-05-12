@@ -10,7 +10,8 @@ function resolveWebEntry() {
 }
 
 function resolveCoreBinary() {
-	const coreName = process.platform === "win32" ? "kara-core.exe" : "kara-core";
+	const coreName =
+		process.platform === "win32" ? "kara-core.exe" : "kara-core";
 	if (!app.isPackaged) {
 		return path.join(__dirname, "core-bin", coreName);
 	}

@@ -1,4 +1,11 @@
-import { copyFileSync, cpSync, existsSync, mkdirSync, readdirSync, rmSync } from "node:fs";
+import {
+	copyFileSync,
+	cpSync,
+	existsSync,
+	mkdirSync,
+	readdirSync,
+	rmSync,
+} from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
@@ -20,7 +27,10 @@ function requirePath(pathToCheck, hint) {
 }
 
 function copyWebBundle() {
-	requirePath(webOutDir, "Run npm --workspace web run build before packaging desktop.");
+	requirePath(
+		webOutDir,
+		"Run npm --workspace web run build before packaging desktop.",
+	);
 	resetDir(desktopWebDistDir);
 	cpSync(webOutDir, desktopWebDistDir, { recursive: true });
 }
@@ -34,16 +44,22 @@ function resolveCoreBinaryName() {
 	}
 
 	const candidates = existsSync(coreDistDir) ? readdirSync(coreDistDir) : [];
-	throw new Error(`No core binary found in ${coreDistDir}. Found: ${candidates.join(", ") || "none"}`);
+	throw new Error(
+		`No core binary found in ${coreDistDir}. Found: ${candidates.join(", ") || "none"}`,
+	);
 }
 
 function copyCoreBinary() {
-	requirePath(coreDistDir, "Run npm --workspace core run build before packaging desktop.");
+	requirePath(
+		coreDistDir,
+		"Run npm --workspace core run build before packaging desktop.",
+	);
 	resetDir(desktopCoreBinDir);
 
 	const binaryName = resolveCoreBinaryName();
 	const fromPath = path.join(coreDistDir, binaryName);
-	const targetName = process.platform === "win32" ? "kara-core.exe" : "kara-core";
+	const targetName =
+		process.platform === "win32" ? "kara-core.exe" : "kara-core";
 	copyFileSync(fromPath, path.join(desktopCoreBinDir, targetName));
 }
 
