@@ -1,6 +1,7 @@
 'use client';
 
 import { TabList, Tabs } from '@application/tabs/tabs';
+import Link from 'next/link';
 import { BadgeWithDot } from '@base/badges/badges';
 import { DropdownAccountButton } from '@base/dropdown/dropdown-account-button';
 import { Input } from '@base/input/input';
@@ -212,13 +213,13 @@ export const HeaderNavigationBase = ({
 								centered ? 'flex-1' : 'mr-4',
 							)}
 						>
-							<a
+							<Link
 								aria-label="Go to homepage"
 								href="/"
 								className="rounded-xs outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
 							>
 								<UntitledLogo className="h-6" />
-							</a>
+							</Link>
 						</div>
 
 						<nav>

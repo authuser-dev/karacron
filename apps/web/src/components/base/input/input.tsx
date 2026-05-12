@@ -271,7 +271,7 @@ export const InputBase = ({
 
 InputBase.displayName = 'InputBase';
 
-interface TextFieldContextProps extends Partial<
+type TextFieldContextProps = Partial<
 	Pick<
 		InputBaseProps,
 		| 'size'
@@ -280,7 +280,7 @@ interface TextFieldContextProps extends Partial<
 		| 'iconClassName'
 		| 'tooltipClassName'
 	>
-> {}
+>;
 
 const TextFieldContext = createContext<TextFieldContextProps>({});
 
