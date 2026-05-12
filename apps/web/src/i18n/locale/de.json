@@ -1,0 +1,312 @@
+{
+  "common": {
+    "appName": "Kara",
+    "languageLabel": "Sprache",
+    "connectionStatusLabel": "Verbindungsstatus",
+    "versionLabel": "Version",
+    "localeNames": {
+      "es": "Spanisch",
+      "en": "Englisch",
+      "ru": "Russisch",
+      "zh": "Chinesisch",
+      "ja": "Japanisch",
+      "hi": "Hindi",
+      "fr": "Französisch",
+      "it": "Italienisch",
+      "de": "Deutsch",
+      "pt": "Portugiesisch"
+    }
+  },
+  "loadingScreen": {
+    "title": "Dein Assistent ist gleich bereit",
+    "rotatingMessages": [
+      "Dein Assistent wird auf echten Kontext abgestimmt.",
+      "Ideen, Gedächtnis und Werkzeuge verbinden.",
+      "Vorbereitung für einen reibungslosen Start.",
+      "Chaos ordnen, damit Kara mit dir denken kann.",
+      "Sincronizando detalles."
+    ],
+    "retryLabel": "Wiederholen",
+    "retryConnectionAriaLabel": "Verbindung wiederholen"
+  },
+  "dashboard": {
+    "placeholder": "Dies ist das Dashboard",
+    "userName": "Carla Gomez",
+    "userRole": "Verwaltung"
+  },
+  "onboardingScreen": {
+    "title": "Willkommen bei Kara",
+    "description": "Schließe die Ersteinrichtung ab.",
+    "welcomeTitle": "Hallo! Ich bin Kara 👋",
+    "welcomeSubtitle": "Dein persönlicher Assistent.",
+    "stepsLabel": "Einrichtungsschritte",
+    "steps": [
+      {
+        "title": "Rechtliches",
+        "description": "Akzeptiere Bedingungen."
+      },
+      {
+        "title": "Profil",
+        "description": "Basisinfos."
+      },
+      {
+        "title": "Assistent",
+        "description": "Personalisierung."
+      },
+      {
+        "title": "Berechtigungen",
+        "description": "Zugriff."
+      }
+    ]
+  },
+  "onboardingWizard": {
+    "backLabel": "Zurück",
+    "nextLabel": "Weiter",
+    "finishLabel": "Abschließen",
+    "submittingLabel": "Guardando...",
+    "stepCounterLabel": "Paso",
+    "completedLabel": "Completado",
+    "currentLabel": "Actual",
+    "saveError": "No se pudo guardar la configuracion inicial. Revisa los datos e intentalo de nuevo.",
+    "finishModal": {
+      "title": "¡Configuracion completada!",
+      "description": "Kara esta lista. Seras redirigido al panel principal en unos segundos.",
+      "redirectingIn": "Redirigiendo en {seconds} segundo{seconds, plural, one {} other {s}}...",
+      "goNowLabel": "Ir ahora"
+    },
+    "legal": {
+      "title": "Rechtliche Hinweise",
+      "description": "Bitte lies und akzeptiere.",
+      "tabsLabel": "Documentos legales",
+      "sections": [
+        {
+          "id": "terms",
+          "label": "Bedingungen",
+          "title": "Nutzungsbedingungen",
+          "articles": [
+            {
+              "heading": "1. Objeto, vigencia y aceptacion",
+              "body": [
+                "Vigencia: 20 de abril de 2026. Estos Terminos de uso regulan el acceso, navegacion y utilizacion de Kara como plataforma de asistencia digital para entornos personales, profesionales u organizacionales.",
+                "Al continuar con la configuracion o utilizar Kara, declaras que tienes capacidad suficiente para obligarte o que actuas con autorizacion valida de la organizacion a la que representas, y aceptas cumplir estos terminos junto con las politicas internas, de seguridad y de uso aceptable aplicables en tu entorno."
+              ]
+            },
+            {
+              "heading": "2. Condiciones de acceso y uso autorizado",
+              "body": [
+                "Kara debe utilizarse exclusivamente para fines licitos, autorizados y compatibles con la funcionalidad del producto. Queda prohibido emplear el servicio para acceder sin autorizacion a sistemas o datos, vulnerar derechos de terceros, eludir controles de seguridad, distribuir contenido ilicito o automatizar actuaciones contrarias a la ley o a obligaciones contractuales vigentes.",
+                "El usuario y, en su caso, la organizacion administradora son responsables de la veracidad de la informacion proporcionada, de la custodia de sus credenciales, de la correcta asignacion de permisos y de la supervision humana de las instrucciones, respuestas, automatizaciones o decisiones apoyadas por el asistente."
+              ]
+            },
+            {
+              "heading": "3. Naturaleza del servicio y limitacion funcional",
+              "body": [
+                "Kara puede generar sugerencias, resumenes, clasificaciones o acciones asistidas a partir de la informacion disponible en el entorno habilitado. Salvo indicacion expresa en contrario, dichas salidas tienen caracter instrumental y no sustituyen la validacion profesional, operativa, juridica, financiera, sanitaria o regulatoria que corresponda en cada caso.",
+                "Las funcionalidades, integraciones, modelos, disponibilidad y rendimiento del servicio pueden evolucionar con el tiempo. Podremos limitar, suspender o revocar total o parcialmente el acceso cuando existan indicios razonables de uso indebido, riesgo de seguridad, incumplimiento de estos terminos, requerimientos legales o necesidades tecnicas de mantenimiento y contencion."
+              ]
+            },
+            {
+              "heading": "4. Aplicacion territorial y marcos normativos complementarios",
+              "body": [
+                "Estos terminos deben interpretarse de forma complementaria con la normativa imperativa aplicable segun el pais de residencia del usuario, el lugar de establecimiento de la organizacion administradora y el territorio en el que se traten los datos o se despliegue el servicio.",
+                "Si Kara se utiliza en Espana o en el Espacio Economico Europeo, el uso del producto debera alinearse, ademas, con el RGPD y, en su caso, con la LOPDGDD. En Mexico, con la LFPDPPP y su normativa secundaria. En Colombia, con la Ley 1581 de 2012 y el Decreto 1377 de 2013. En Peru, con la Ley 29733 y su reglamento. En Argentina, con la Ley 25.326. En Chile, con la Ley 19.628. Cuando exista una norma local mas estricta, prevalecera esa exigencia sobre este texto general."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "privacy",
+          "label": "Datenschutz",
+          "title": "Datenschutzrichtlinie",
+          "articles": [
+            {
+              "heading": "1. Alcance de la politica y categorias de datos",
+              "body": [
+                "Vigencia: 20 de abril de 2026. Esta Politica de privacidad describe como Kara recopila, utiliza, conserva y protege la informacion personal y tecnica necesaria para prestar el servicio y administrar la relacion con sus usuarios.",
+                "Tratamos los datos que proporcionas directamente durante el onboarding o el uso del producto, asi como informacion derivada de la operacion del servicio, incluyendo datos de identificacion, contacto, configuracion, idioma, preferencias, registros tecnicos, eventos de sesion, estado de integraciones habilitadas y otros metadatos necesarios para asegurar continuidad operativa."
+              ]
+            },
+            {
+              "heading": "2. Finalidades, legitimacion y conservacion",
+              "body": [
+                "La finalidad principal del tratamiento es crear y mantener tu cuenta o entorno, personalizar la experiencia del asistente, habilitar funciones contratadas, prevenir accesos no autorizados, atender solicitudes de soporte y cumplir obligaciones legales, regulatorias, contractuales o de auditoria que resulten exigibles.",
+                "La base de legitimacion podra descansar, segun el caso, en la ejecucion de una relacion contractual o precontractual, el cumplimiento de obligaciones legales, el interes legitimo en asegurar y mejorar el servicio, o el consentimiento cuando la normativa aplicable lo exija para tratamientos especificos.",
+                "La informacion se conservara durante el plazo necesario para prestar el servicio, resolver incidencias, atender reclamaciones, acreditar operaciones relevantes y cumplir las politicas de retencion o bloqueo que resulten exigibles en cada jurisdiccion."
+              ]
+            },
+            {
+              "heading": "3. Acceso, seguridad y derechos del titular",
+              "body": [
+                "Kara aplica criterios de necesidad, minimizacion y control de acceso para restringir el uso de la informacion a las personas, sistemas y procesos que deban intervenir en la prestacion, seguridad, soporte o mejora razonable del servicio. El acceso ampliado a datos dependera de los permisos, configuraciones e integraciones activadas en tu entorno.",
+                "Adoptamos medidas tecnicas y organizativas razonables orientadas a preservar la confidencialidad, integridad, disponibilidad y trazabilidad de la informacion tratada. No obstante, ningun sistema conectado ofrece seguridad absoluta, por lo que el usuario tambien debe mantener controles adecuados sobre credenciales, dispositivos, permisos y canales de integracion.",
+                "El titular de los datos podra ejercer, en la medida reconocida por la normativa aplicable, derechos de acceso, rectificacion, supresion, oposicion, limitacion, portabilidad y, cuando proceda, revocacion del consentimiento o exclusion de determinadas finalidades no esenciales."
+              ]
+            },
+            {
+              "heading": "4. Ajustes por pais y marco normativo",
+              "body": [
+                "En Espana y en el Espacio Economico Europeo, este tratamiento se entendera complementado por el Reglamento (UE) 2016/679 y, cuando proceda, por la Ley Organica 3/2018, incluyendo derechos, deberes de informacion, bases de legitimacion y reglas sobre transferencias internacionales.",
+                "En Mexico, el tratamiento se ajustara a la Ley Federal de Proteccion de Datos Personales en Posesion de los Particulares, su Reglamento y los lineamientos aplicables, reconociendo especialmente los derechos ARCO y la necesidad de avisos de privacidad integrales o simplificados segun corresponda.",
+                "En Colombia, se atendera la Ley 1581 de 2012, el Decreto 1377 de 2013 y las directrices de la SIC; en Peru, la Ley 29733 y su reglamento; en Argentina, la Ley 25.326; y en Chile, la Ley 19.628. Cuando el despliegue o la actividad del usuario conecten con varias jurisdicciones, debera aplicarse la norma mas protectora o la especificamente exigible al responsable u operador correspondiente."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "data",
+          "label": "Datos",
+          "title": "Tratamiento de datos",
+          "articles": [
+            {
+              "heading": "1. Alcance de la autorizacion",
+              "body": [
+                "Vigencia: 20 de abril de 2026. Mediante esta aceptacion reconoces y autorizas el tratamiento de los datos estrictamente necesarios para habilitar, ejecutar, mantener y mejorar las funcionalidades de Kara que hayan sido activadas por ti o por la organizacion administradora.",
+                "Si no aceptas este tratamiento en los terminos aqui descritos, no debes completar el onboarding ni utilizar las funciones que dependan del mismo. La aceptacion de este documento no sustituye acuerdos de tratamiento, anexos contractuales, contratos con encargados ni politicas internas adicionales que puedan resultar exigibles en escenarios especificos."
+              ]
+            },
+            {
+              "heading": "2. Operaciones y categorias de datos tratadas",
+              "body": [
+                "El tratamiento puede incluir operaciones de recopilacion, registro, organizacion, estructuracion, consulta, uso, conservacion, combinacion, bloqueo, supresion y, cuando resulte necesario para la funcionalidad habilitada, comunicacion controlada a proveedores, servicios de infraestructura o integraciones expresamente configuradas dentro del producto.",
+                "Entre las categorias potencialmente tratadas se incluyen datos de cuenta, informacion de perfil, parametros de configuracion, historial operativo relevante, eventos de uso, identificadores de sesion, preferencias del asistente, memoria funcional, archivos o contenidos aportados por el usuario y metadatos tecnicos asociados a los flujos habilitados."
+              ]
+            },
+            {
+              "heading": "3. Proveedores, integraciones y transferencias",
+              "body": [
+                "El tratamiento se limitara al alcance necesario para prestar el servicio, mantener contexto util, ejecutar automatizaciones autorizadas, reforzar la seguridad, diagnosticar fallos, asegurar la trazabilidad tecnica y cumplir politicas de continuidad, retencion o cumplimiento aplicables en tu organizacion o en la configuracion del producto.",
+                "Cuando actives integraciones de terceros o conectes fuentes externas, entiendes que determinados datos podran circular hacia o desde dichos servicios conforme a las instrucciones, permisos y limites tecnicos definidos en cada integracion. Es tu responsabilidad verificar que dispones de legitimacion suficiente para habilitar ese flujo y para compartir la informacion correspondiente.",
+                "Si el tratamiento implicara accesos remotos, alojamiento transfronterizo o transferencias internacionales, se aplicaran las salvaguardas legales y contractuales exigibles en la jurisdiccion correspondiente, incluyendo, cuando proceda, decisiones de adecuacion, clausulas contractuales tipo, reglas corporativas vinculantes u otros mecanismos habilitantes equivalentes."
+              ]
+            },
+            {
+              "heading": "4. Ajustes por pais y exigencias regulatorias",
+              "body": [
+                "En el Espacio Economico Europeo y en Espana, el tratamiento debera documentarse conforme al RGPD y, en su caso, a la LOPDGDD, especialmente respecto de encargados, registros de actividades, evaluaciones de impacto, transferencias y ejercicio de derechos.",
+                "En Mexico, cuando Kara opere con datos personales en posesion de particulares, deberan observarse los requisitos de informacion, consentimiento, encargo, transferencias y medidas de seguridad previstos en la LFPDPPP. En Colombia, Peru, Argentina y Chile deberan atenderse igualmente las reglas locales sobre autorizacion, finalidad, seguridad, conservacion y atencion de solicitudes de titulares.",
+                "En la version actual del producto, determinadas decisiones del onboarding pueden no persistirse todavia en todos los entornos de despliegue; sin embargo, esta aceptacion cubre tanto el tratamiento presente como el que resulte necesario cuando esas capacidades de almacenamiento y sincronizacion se encuentren plenamente habilitadas."
+              ]
+            }
+          ]
+        }
+      ],
+      "termsLabel": "Ich habe die Nutzungsbedingungen gelesen und akzeptiere sie.",
+      "privacyLabel": "Acepto la politica de privacidad.",
+      "dataProcessingLabel": "Acepto el tratamiento de datos necesario para prestar el servicio.",
+      "acceptAllLabel": "Ich habe die Bedingungen, Konditionen und die Datennutzung gelesen und akzeptiere sie.",
+      "error": "Debes aceptar terminos, privacidad y tratamiento de datos para continuar.",
+      "acceptTermsLabel": "Ich akzeptiere die Bedingungen"
+    },
+    "user": {
+      "title": "Benutzereinrichtung",
+      "description": "Konfiguration.",
+      "firstNameLabel": "Vorname",
+      "firstNamePlaceholder": "Vorname",
+      "lastNameLabel": "Nachname",
+      "lastNamePlaceholder": "Nachname",
+      "birthDateLabel": "Geburtsdatum",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "beispiel@kara.ai",
+      "languageLabel": "Idioma principal",
+      "languageHint": "Lo detectamos automaticamente, pero puedes cambiarlo ahora.",
+      "timezoneLabel": "Zona horaria",
+      "timezoneHint": "La detectamos automaticamente y puedes buscar otra entre todas las zonas horarias disponibles.",
+      "timezonePlaceholder": "Busca o selecciona una zona horaria",
+      "usernameLabel": "Nombre de usuario",
+      "usernamePlaceholder": "@usuario",
+      "bioLabel": "Biografie",
+      "bioPlaceholder": "Erzahle Kara, was du machst, wie du am liebsten arbeitest oder jeden nutzlichen Kontext.",
+      "bioHint": "Opcional. Esto ayudara a personalizar mejor la experiencia inicial.",
+      "errors": {
+        "firstNameRequired": "Pflichtfeld",
+        "lastNameRequired": "Pflichtfeld",
+        "emailRequired": "Pflichtfeld",
+        "emailInvalid": "Ungültig"
+      },
+      "selectDateLabel": "Datum auswählen",
+      "cancelDateLabel": "Abbrechen",
+      "applyDateLabel": "Anwenden"
+    },
+    "assistant": {
+      "title": "Konfiguriere Kara",
+      "description": "Anpassen.",
+      "assistantNameLabel": "Name",
+      "assistantNamePlaceholder": "Kara",
+      "preferredNameLabel": "¿Cómo quieres que te llame el asistente?",
+      "preferredNamePlaceholder": "Ej. Alex",
+      "toneLabel": "Kommunikationston",
+      "tonePlaceholder": "Selecciona un tono",
+      "specializationLabel": "Spezialisierung",
+      "specializationPlaceholder": "Wahle eine Spezialisierung",
+      "assistantBehaviorLabel": "Verhalten des Assistenten",
+      "assistantBehaviorPlaceholder": "Beschreibe, wie sich dein Assistent verhalten soll.",
+      "systemPromptLabel": "Prompt base",
+      "systemPromptPlaceholder": "Describe el rol, el tono y los limites del asistente.",
+      "defaultModelLabel": "Modelo por defecto",
+      "defaultModelHint": "Lo sugerimos automaticamente con una heuristica local basada en memoria, nucleos disponibles y capacidad grafica detectada en el navegador.",
+      "activePersonalityLabel": "Personalidad activa",
+      "personalitySectionTitle": "Personalidades",
+      "personalitySectionHint": "Puedes mantener una personalidad base o crear otras nuevas para especializar el comportamiento inicial.",
+      "addPersonalityLabel": "Anadir personalidad",
+      "personalityModalTitle": "Nueva personalidad",
+      "personalityModalDescription": "Define un nombre y una descripcion breve para incorporarla al selector del onboarding.",
+      "personalityNameLabel": "Nombre de la personalidad",
+      "personalityNamePlaceholder": "Ej. Investigadora precisa",
+      "personalityDescriptionLabel": "Descripcion",
+      "personalityDescriptionPlaceholder": "Explica como debe pensar, responder o priorizar esta personalidad.",
+      "personalityNameError": "El nombre de la personalidad es obligatorio.",
+      "personalityDescriptionError": "La descripcion de la personalidad es obligatoria.",
+      "cancelPersonalityLabel": "Abbrechen",
+      "savePersonalityLabel": "Personlichkeit speichern",
+      "errors": {
+        "assistantName": "El nombre del asistente es obligatorio.",
+        "defaultModelId": "Selecciona un modelo por defecto.",
+        "activePersonalityId": "Selecciona una personalidad activa."
+      },
+      "voiceLabel": "Sprachausgabe",
+      "voicePlaceholder": "Wähle eine Stimme",
+      "specializationGroupLabels": {
+        "general": "Allgemein",
+        "engineering": "Ingenieurwesen",
+        "creative": "Kreativ",
+        "management": "Management",
+        "science": "Wissenschaft",
+        "arts": "Kunst",
+        "humanities": "Geisteswissenschaften",
+        "business": "Wirtschaft",
+        "other": "Sonstiges"
+      }
+    },
+    "permissions": {
+      "title": "Berechtigungen und Zugriffe",
+      "description": "Wahle, welche Hardware-Funktionen und Benachrichtigungen der Assistent auf diesem Gerat nutzen darf.",
+      "deviceGroupTitle": "Geratezugriff",
+      "deviceGroupDescription": "Erlaube dem Assistenten, die Hardware deines Gerats zu nutzen und dir Benachrichtigungen zu senden.",
+      "footerNote": "Du kannst diese Berechtigungen spater in den Sicherheitseinstellungen andern.",
+      "error": "Wahle mindestens eine Berechtigung, um fortzufahren.",
+      "policyOptions": [
+        {
+          "slug": "camera",
+          "label": "Kamera",
+          "description": "Erlaubt Bildaufnahme oder Echtzeit-Videoanalyse."
+        },
+        {
+          "slug": "microphone",
+          "label": "Mikrofon",
+          "description": "Erlaubt Sprachinteraktion mit dem Assistenten."
+        },
+        {
+          "slug": "notifications",
+          "label": "Benachrichtigungen",
+          "description": "Erhalte Hinweise und Erinnerungen vom Assistenten."
+        }
+      ],
+      "disksTitle": "Zugelassene Laufwerke",
+      "disksDescription": "Wahle, auf welche Laufwerke der Assistent zugreifen kann.",
+      "diskLoadingLabel": "Systemlaufwerke werden geladen...",
+      "diskLoadError": "Laufwerke konnten nicht aus dem Backend geladen werden.",
+      "diskEmptyLabel": "Keine Laufwerke erkannt.",
+      "diskFreeFormat": "{free} frei von {total}"
+    }
+  }
+}
