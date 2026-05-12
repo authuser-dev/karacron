@@ -2,7 +2,7 @@ appId: com.kara.desktop
 productName: Kara Desktop
 
 directories:
-    output: ../../builds
+    output: release
 
 files:
     - dist/**
@@ -12,11 +12,22 @@ extraResources:
     - from: ../web/dist
       to: web
 
+mac:
+    target:
+        - dmg
+        - zip
+    category: public.app-category.productivity
+
 win:
     target:
-        - portable
         - nsis
+        - portable
 
 nsis:
     oneClick: false
     allowToChangeInstallationDirectory: true
+
+linux:
+    target:
+        - AppImage
+    category: Utility
