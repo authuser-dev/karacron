@@ -155,7 +155,7 @@ Kara implements multiple security layers:
 - Zero external telemetry
 - Open-source architecture for transparency
 
-See [SECURITY.md](docs/SECURITY.md) for detailed information.
+See [SECURITY.md](SECURITY.md) for detailed information.
 
 ---
 
