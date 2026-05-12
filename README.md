@@ -1,7 +1,10 @@
 # Kara - Local-First AI Assistant 🚀
 
+![Kara Banner](docs/banner.png)
+
 > **Privacy without compromise.** A flexible AI assistant that puts you in control. Process data locally by default, connect from anywhere.
 
+[![Website](https://img.shields.io/badge/website-karacron.com-blue)](https://karacron.com)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/authuser-dev/karacron.svg?style=social&label=Star&maxAge=2592000)](https://github.com/authuser-dev/karacron)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-red)](https://github.com/authuser-dev/karacron)
@@ -94,18 +97,6 @@ Built for:
 
 ---
 
-## 📖 Documentation
-
-| Document                                   | Purpose                                     |
-| ------------------------------------------ | ------------------------------------------- |
-| [User Guide](docs/USER_GUIDE.md)           | How to use the desktop application          |
-| [Messaging Integration](docs/MESSAGING.md) | Connect Telegram, Discord, Slack, etc.      |
-| [Voice Setup](docs/VOICE_SETUP.md)         | Configure speech-to-text and text-to-speech |
-| [Security](docs/SECURITY.md)               | Privacy architecture and data protection    |
-| [Troubleshooting](docs/TROUBLESHOOTING.md) | Common issues and solutions                 |
-
----
-
 ## 💼 Use Cases
 
 ### 🏢 For Enterprises
@@ -164,7 +155,7 @@ Kara implements multiple security layers:
 - Zero external telemetry
 - Open-source architecture for transparency
 
-See [SECURITY.md](docs/SECURITY.md) for detailed information.
+See [SECURITY.md](SECURITY.md) for detailed information.
 
 ---
 

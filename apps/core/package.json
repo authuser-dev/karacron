@@ -1,0 +1,12 @@
+{
+	"name": "core",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "node scripts/dev.mjs",
+		"build": "node -e \"require('node:fs').mkdirSync('dist',{recursive:true})\" && node scripts/go-with-cache.mjs build -o dist/kara-core .",
+		"lint": "node scripts/go-with-cache.mjs vet ./...",
+		"check": "node scripts/go-with-cache.mjs test ./...",
+		"clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+	}
+}
