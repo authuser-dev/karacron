@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
 
 permissions:
   contents: write
@@ -27,7 +32,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.25'
 
       - name: Install Dependencies
         run: npm ci
@@ -44,9 +49,13 @@ jobs:
       - name: Check Core
         run: npm --workspace core run check
 
+      - name: Check Desktop
+        run: npm --workspace @kara/desktop run check
+
   semantic_release:
     name: Semantic Release
     needs: quality
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     outputs:
       released: ${{ steps.semantic.outputs.new_release_published }}
@@ -109,7 +118,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.25'
 
       - name: Install Dependencies
         run: npm ci
@@ -121,7 +130,7 @@ jobs:
         run: npm --workspace core run build
 
       - name: Build Electron Installer
-        run: npm --workspace desktop run ${{ matrix.script }} -- --config.extraMetadata.version=${{ needs.semantic_release.outputs.version }}
+        run: npm --workspace @kara/desktop run ${{ matrix.script }} -- --config.extraMetadata.version=${{ needs.semantic_release.outputs.version }}
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2

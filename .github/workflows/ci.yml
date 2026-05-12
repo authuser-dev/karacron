@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Quality Gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint Web
+        run: npm --workspace web run lint
+
+      - name: Lint Core
+        run: npm --workspace core run lint
+
+      - name: Check Web
+        run: npm --workspace web run check
+
+      - name: Check Core
+        run: npm --workspace core run check
+
+      - name: Check Desktop
+        run: npm --workspace @kara/desktop run check
