@@ -16,7 +16,7 @@
 		"check": "npm run typecheck"
 	},
 	"dependencies": {
-		"electron": "^35.7.5"
+		"electron": "^42.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^24.0.0",
