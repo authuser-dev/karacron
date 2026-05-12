@@ -97,7 +97,7 @@ export async function createCoreUser(
 		const error = new Error(
 			`No se pudo crear el usuario (${response.status})`,
 		);
-		(error as any).status = response.status;
+		(error as Error & { status: number }).status = response.status;
 		throw error;
 	}
 }

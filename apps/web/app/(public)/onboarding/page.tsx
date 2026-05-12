@@ -87,9 +87,9 @@ function OnboardingContent() {
 		} else {
 			try {
 				await createCoreUser(payload);
-			} catch (err: any) {
+			} catch (err: unknown) {
 				// Only fallback to update if user already exists (409 Conflict)
-				if (err?.status === 409) {
+				if ((err as { status?: number })?.status === 409) {
 					await updateCurrentCoreUser(payload);
 				} else {
 					// Re-throw validation errors or other issues

@@ -4,7 +4,7 @@ import {
 	ChartLegendContent,
 	ChartTooltipContent,
 } from '@application/charts/charts-base';
-import { useBreakpoint } from '@hookuse-breakpoint';
+import { useBreakpoint } from '@hook/use-breakpoint';
 import { cx } from '@util/cx';
 import {
 	Area,

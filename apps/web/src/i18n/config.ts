@@ -23,7 +23,6 @@ export const supportedLocales = [
 ] as const;
 
 export type Locale = (typeof supportedLocales)[number];
-type LocaleMessages = typeof enMessages;
 
 export const DEFAULT_LOCALE: Locale = 'en';
 export const LOCALE_COOKIE_NAME = 'kara-locale';
@@ -40,7 +39,7 @@ const messages = {
 	it: itMessages,
 	de: deMessages,
 	pt: ptMessages,
-} satisfies Record<Locale, LocaleMessages>;
+} as const;
 
 export function resolveLocale(value: string | null | undefined): Locale | null {
 	if (!value) {
@@ -73,5 +72,5 @@ export function getPreferredLocale(
 }
 
 export function getLocaleMessages(locale: Locale) {
-	return messages[locale];
+	return messages[locale] as typeof enMessages;
 }

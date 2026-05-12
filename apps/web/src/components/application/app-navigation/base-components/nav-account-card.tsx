@@ -3,7 +3,7 @@
 import { AvatarLabelGroup } from '@base/avatar/avatar-label-group';
 import { Button } from '@base/buttons/button';
 import { RadioButtonBase } from '@base/radio-buttons/radio-buttons';
-import { useBreakpoint } from '@hookuse-breakpoint';
+import { useBreakpoint } from '@hook/use-breakpoint';
 import type { Placement } from '@react-types/overlays';
 import {
 	BookOpen01,

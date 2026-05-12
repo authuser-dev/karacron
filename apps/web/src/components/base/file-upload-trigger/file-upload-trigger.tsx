@@ -1,7 +1,7 @@
 "use client";
 
 import type { DetailedReactHTMLElement, HTMLAttributes, ReactNode } from "react";
-import React, { cloneElement, useRef } from "react";
+import React, { cloneElement, useEffect, useRef } from "react";
 import { filterDOMProps } from "@react-aria/utils";
 
 interface FileTriggerProps {
@@ -40,6 +40,18 @@ export const FileTrigger = (props: FileTriggerProps) => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const domProps = filterDOMProps(rest);
 
+    useEffect(() => {
+        const input = inputRef.current;
+        if (!input) return;
+
+        if (acceptDirectory) {
+            input.setAttribute("webkitdirectory", "");
+            return;
+        }
+
+        input.removeAttribute("webkitdirectory");
+    }, [acceptDirectory]);
+
     // Make sure that only one child is passed to the component.
     const clonableElement = React.Children.only(children);
 
@@ -65,8 +77,6 @@ export const FileTrigger = (props: FileTriggerProps) => {
                 onChange={(e) => onSelect?.(e.target.files)}
                 capture={defaultCamera}
                 multiple={allowsMultiple}
-                // @ts-expect-error
-                webkitdirectory={acceptDirectory ? "" : undefined}
             />
         </>
     );
